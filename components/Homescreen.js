@@ -3,8 +3,8 @@ import React from 'react';
 import { Button, StyleSheet, Image, Text, View } from 'react-native';
 import MapView, { Callout, Marker } from 'react-native-maps';
 
-const RetroMap = 
-[
+//Setting the different style of map in , its not working at the momemt but I will fix it when i find the bug
+const RetroMap = [
   {
     "elementType": "geometry",
     "stylers": [
@@ -220,13 +220,14 @@ const RetroMap =
   }
 ]
 
+
 export default function Homescreen() {
-/* const [location , setLocation] = useState(initialState)  
- */  
+ 
 return (
     <View style={styles.container}>
       <Text style={styles.title}>Iceland Hot Springs</Text>
      <StatusBar style="auto" />
+     {/* Googlemaps library */}
       <MapView
         initialRegion={{
           latitude: 65,
@@ -235,13 +236,16 @@ return (
           longitudeDelta: 12,
         }}   
         
-        customMapStyle={RetroMap}
-        showUsersLocation={true}   
+        showsUserLocation={true}   
         showsCompass={true}
         rotateEnabled={false}
         style={{width:'100%' , flex:0.7}}
+        customMapStyle={RetroMap}
+        
       >
+         {/* All the pins for the Hotsprings */}
         <Marker
+          // Coordinates of the pin this case bluelagoon
           coordinate={{
           latitude:63.881487,
           longitude:-22.454883,
@@ -258,6 +262,49 @@ return (
               </View>
               <View style={styles.arrowborder}/>
               <View  style={styles.arrow}/>
+            </View>
+          </Callout>
+        </Marker>  
+        <Marker
+          //Coordinate of the pin
+          coordinate={{
+          latitude:65.625,
+          longitude:-16.842,
+          
+        }}
+         icon={require('../images/pin.png')}
+         title='Myvatn nature baths'
+         description='Most popular baths in the north'
+        >
+          <Callout tooltip> 
+            <View>
+              <View style={styles.bubble} >
+                  <Text style={styles.hotspringname}>Mývatn nature baths</Text>
+                  <Image style={styles.image} source={require('../images/myvatn.jpeg')}/>
+              </View>
+              <View style={styles.arrowborder}/>
+              <View  style={styles.arrow}/>
+            </View>
+          </Callout>
+        </Marker>  
+        <Marker
+          coordinate={{
+          latitude:65.30348,
+          longitude:-14.44451,
+          
+        }}
+         icon={require('../images/pin.png')}
+         title='Vök Baths'
+         description='Finest baths in the east'
+        >
+          <Callout tooltip> 
+            <View>
+              <View style={styles.bubble} >
+                  <Text style={styles.hotspringname}>Vök Baths</Text>
+                  <Image style={styles.image} source={require('../images/vokbaths.jpeg')}/>
+              </View>
+              <View style={styles.arrowborder}/>
+              <View style={styles.arrow}/>
             </View>
           </Callout>
         </Marker>  
@@ -298,32 +345,30 @@ const styles = StyleSheet.create({
      alignSelf:'flex-start',
      backgroundColor:'#fff',
      borderRadius:9,
-     borderColor:'#ccc',
+     borderColor:'grey',
      borderWidth:0.5,
      padding:15,
-     width:180,
+     width:230,
    },
   
-  arrow:{
-    backgroundColor:'yellow',
-    borderColor:'transparent',
-    borderColor:'#fff', 
+  
+  arrowborder:{
+    backgroundColor:'transparent',
+    borderColor:'red',
+    borderWidth:10,
+   
     alignSelf:'center',
-    borderWidth:16,
-    marginTop:-32,
+    
   
   },
-  arrowBorder:{
-    backgroundColor:'green',
-    borderColor:'transparent',
-    borderColor:'#007a87',
-    borderWidth:16,
+  arrow:{
+    backgroundColor:'yellow',
+    borderColor:'yellow',
+    borderColor:'#fff', 
     alignSelf:'center',
-    marginTop:-0.5,
-    marginBottom:-15
-
-
-     
+    borderTopWidth:4,
+    borderWidth:20,
+    
   
   },
   hotspringname:{
@@ -331,8 +376,8 @@ const styles = StyleSheet.create({
     marginBottom:5,
   },
   image:{
-    width:150,
-    height:100,
+    width:200,
+    height:160,
   }
 
 

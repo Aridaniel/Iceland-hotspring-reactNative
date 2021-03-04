@@ -26,7 +26,7 @@ const Tab = createBottomTabNavigator();
 
 export default function TabNavigator() {
   return (
-    
+        //The bottom tabs, 
         <Tab.Navigator tabBar={props => <TabBar {...props} />}>
          <Tab.Screen name="Explore" component={Homescreen} initialParams={{icon:'find'}} />
          <Tab.Screen name="Hotsprings" component={Hotspring} initialParams={{icon:'hearto'}}/>

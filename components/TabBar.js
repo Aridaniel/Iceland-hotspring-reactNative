@@ -5,11 +5,11 @@ import Tab from './Tab'
 const {width} = Dimensions.get('screen')
 
 const TabBar = ({ state, navigation }) => {
-const[selected,setSelected] = useState('Home')
+    //Selected state when nothing is pressed
+    const[selected,setSelected] = useState('Home')
 
-    
     const {routes} = state;
-
+    // SELECTED TAB WILL BE RED OTHERWISE BLACK
     const renderColor = (currentTab) => currentTab === selected ? 'red' :'black'
 
     const handlePress = (activeTab,index) => {
@@ -19,13 +19,13 @@ const[selected,setSelected] = useState('Home')
         navigation.navigate(activeTab)
         }
     }
+    console.log(state.routes)
 
-
-console.log(state.routes)
     return (
         <View style={styles.wrapper}>
             <View style={styles.container}>
                 {
+                    //Maps through all the tabs or pages
                     routes.map((route, index) => (
                     <Tab 
                         tab={route}

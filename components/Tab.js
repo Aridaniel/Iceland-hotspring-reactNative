@@ -6,8 +6,8 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 const Tab = ({color, tab, onPress, icon}) => {
     console.log(tab.name)
 
-
     return (
+        //EAch Tab with the Toucable feature and onPress function, imported vector from Antdesign
         <TouchableOpacity style={styles.container} onPress={onPress}>
             {icon &&  <AntDesign name={icon} size={20} color={color} />}
             <Text style={{color:color}}>{tab.name}</Text>
