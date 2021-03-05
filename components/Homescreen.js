@@ -260,8 +260,8 @@ return (
                   <Text style={styles.hotspringname}>Blue Lagoon</Text>
                   <Image style={styles.image} source={require('../images/bluelagoon1.jpeg')}/>
               </View>
-              <View style={styles.arrowborder}/>
-              <View  style={styles.arrow}/>
+              {/* <View style={styles.arrowborder}/>
+              <View  style={styles.arrow}/> */}
             </View>
           </Callout>
         </Marker>  
@@ -282,8 +282,8 @@ return (
                   <Text style={styles.hotspringname}>Mývatn nature baths</Text>
                   <Image style={styles.image} source={require('../images/myvatn.jpeg')}/>
               </View>
-              <View style={styles.arrowborder}/>
-              <View  style={styles.arrow}/>
+              {/* <View style={styles.arrowborder}/>
+              <View  style={styles.arrow}/> */}
             </View>
           </Callout>
         </Marker>  
@@ -303,8 +303,8 @@ return (
                   <Text style={styles.hotspringname}>Vök Baths</Text>
                   <Image style={styles.image} source={require('../images/vokbaths.jpeg')}/>
               </View>
-              <View style={styles.arrowborder}/>
-              <View style={styles.arrow}/>
+              {/* <View style={styles.arrowborder}/>
+              <View style={styles.arrow}/> */}
             </View>
           </Callout>
         </Marker>  
